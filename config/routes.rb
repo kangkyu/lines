@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:new] do
+    get :auth, on: :collection
+    delete :revoke, on: :collection
+  end
   root 'welcome#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -10,5 +10,10 @@
 
   <body>
     <%= yield %>
+    <% if signed_in? %>
+      <%= link_to 'Sign Out', revoke_sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', google_auth_url %>
+    <% end %>
   </body>
 </html>

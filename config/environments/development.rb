@@ -49,3 +49,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
+
+Yt.configure do |config|
+  config.log_level = :devel
+end
